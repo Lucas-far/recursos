@@ -1,0 +1,10 @@
+
+
+def terminal():
+    """
+    pip install django==2.2.9
+    pip install django dj-static
+    pip freeze > requirements.txt
+    django-admin startproject pp .
+    django-admin startapp pa
+    """
