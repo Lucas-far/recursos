@@ -58,9 +58,9 @@ def classe():
 def criar_commit_local():
     """
     Criar commits
-    --------------------------------
+    ------------------------------------------------
     raiz / botão direito / git / commit directory...
-    --------------------------------
+    ------------------------------------------------
 
     Objetivo:
         1. criar um commit para quando é feita uma mudança de projeto
@@ -81,3 +81,32 @@ def efetuar_push():
     Objetivo:
         1. efetuar commits registrados, para quando um projeto seja usado (modo produção)
     """
+
+# todo CURSO: Python Birds / AULA: Atributo Complexo
+
+def classe_4():
+    """
+    class Pessoa:
+        def __init__(self, nome: str = 'indefinido', idade: int = 18, *filhos):  # iterável (certo = *) (errado = [])
+            self.nome = nome
+            self.idade = idade
+            self.filhos = list(filhos)
+
+    if __name__ == '__main__':
+        # obj
+        alfa = Pessoa('Kano', 42, 'Marcos', 'Ângela')
+
+        # obj2
+        beta = Pessoa('Ermac', 39, alfa)  # obj dentro do obj2
+
+        # RESOLUÇÃO 1
+        for filho in beta.filhos:  # for var in obj.alfa-atrib3
+            print(filho.nome)      # print(var.alfa.atrib1)
+
+        # RESOLUÇÃO 2
+        beta = Pessoa('Ermac', 39, alfa.nome)
+        print(beta.__dict__)
+    """
+
+# todo CURSO: Python Birds / AULA:
+

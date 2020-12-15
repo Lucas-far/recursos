@@ -5,9 +5,6 @@ def infos():
     Uso:
         @poo (programação orientada a objetos)
 
-    Contexto:
-        print
-
     Objetivo:
         criar um dicionário que retorna as classes especificadas nos parâmetros em função
         criar um dicionário que retorna as classes especificadas nos atributos de instância em POO
