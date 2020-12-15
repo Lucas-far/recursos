@@ -96,3 +96,28 @@ def classe_4():
 # todo CURSO: Python Birds / AULA: Composição
 
 "/home/lucas/PycharmProjects/recursos/PYTHON/POO/composicao.py"
+
+# todo CURSO: Python Birds / AULA: Fase e Atores
+
+def modulo_fase_classe_fase():
+    """
+    class Fase():
+        def __init__(self, intervalo_de_colisao=1):
+            self.intervalo_de_colisao = intervalo_de_colisao
+            self._passaros = []
+            self._porcos = []
+            self._obstaculos = []
+    """
+
+# Adicionando imagens à placa gráfica (atores e objetos)
+def modulo_fase():
+    """
+    def adicionar_obstaculo(self, *obstaculos):
+        self._obstaculos.extend(obstaculos)
+
+    def adicionar_porco(self, *porcos):
+        self._porcos.extend(porcos)
+
+    def adicionar_passaro(self, *passaros):
+        self._passaros.extend(passaros)
+    """
