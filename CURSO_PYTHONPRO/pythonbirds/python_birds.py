@@ -38,21 +38,6 @@ def testar_jogo():
          2. para então fazer: [ python3 placa_grafica_tkinter.py ]
     """
 
-# todo CURSO: Python Birds / AULA: Classe
-
-def projeto():
-    """
-    raiz / new / python package / poo
-    poo / new / python file / pessoa.py
-    """
-
-# pessoa.py / Pessoa
-def classe():
-    """
-    class Pessoa:
-        pass
-    """
-
 # todo CURSO: Python Birds / AULA: Commit e Push
 
 def criar_commit_local():
@@ -108,5 +93,6 @@ def classe_4():
         print(beta.__dict__)
     """
 
-# todo CURSO: Python Birds / AULA:
+# todo CURSO: Python Birds / AULA: Composição
 
+"/home/lucas/PycharmProjects/recursos/PYTHON/POO/exemplo_composicao.py"
