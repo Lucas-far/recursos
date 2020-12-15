@@ -95,4 +95,4 @@ def classe_4():
 
 # todo CURSO: Python Birds / AULA: Composição
 
-"/home/lucas/PycharmProjects/recursos/PYTHON/POO/exemplo_composicao.py"
+"/home/lucas/PycharmProjects/recursos/PYTHON/POO/composicao.py"
