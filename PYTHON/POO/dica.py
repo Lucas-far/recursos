@@ -13,7 +13,7 @@ def ex_atrib_classe():
     ABORDAGEM:
               seres humanos possuem olhos em comum
               ventiladores possuem hélices em comum
-              todos carros possuem quatro rodas
+              carros possuem rodas
     """
 
 def ex_atrib_inst():

@@ -121,3 +121,106 @@ def modulo_fase():
     def adicionar_passaro(self, *passaros):
         self._passaros.extend(passaros)
     """
+
+# todo CURSO: Python Birds / AULA: Sobrescrita de Atributo
+
+def atores_py():
+    """
+    class Obstaculo(Ator):
+    _carater_ativo = 'O'
+
+    class Porco(Ator):
+        _carater_ativo = '@'
+
+    class PassaroVermelho(Passaro):
+        _carater_ativo = 'V'
+    """
+
+# todo CURSO: Python Birds / AULA: Tipos de Teste
+
+def tipos():
+    """
+    testes unitários (unittest)
+    testes integrados ()
+    """
+
+"raiz / dir testes / fase_testes.py"
+def fase_testes_py():
+    """
+    def teste_acabou_sem_porcos(self):
+        fase = Fase()
+        self.assertEqual(VITORIA, fase.status())
+    """
+    #  Esse método de teste contendo um erro proposital. Segurar o ctrl e clicar em [ status() ] de [ fase.status() ]
+
+
+"raiz / fase.py"
+def fase_py():
+    """
+        def status(self):
+            return EM_ANDAMENTO
+    """
+    # Correção do método
+    "return VITORIA"  # valor modificado na função [ status ], pois, se o jogo acabou sem porcos, então é: VITÓRIA
+
+# todo CURSO: Python Birds / AULA: Método Protegido
+
+"raiz / dir testes / fase_testes.py"
+def fase_testes_py2():
+    """
+    def teste_acabou_com_porcos_e_passaros(self):
+        fase = Fase()
+        porcos = [PorcoFake(1, 1) for _ in range(2)]      # criando 2 porcos
+        passaros = [PassaroFake(1, 1) for _ in range(2)]  # criando 2 pássaros
+        fase.adicionar_porco(*porcos)
+        fase.adicionar_passaro(*passaros)
+
+        self.assertEqual(EM_ANDAMENTO, fase.status())  # EM_ANDAMENTO = há pássaros e porcos
+
+        for ator in porcos + passaros:                 # concatenação de listas
+            ator.status = DESTRUIDO                    # modificar cada índice para ter atributo de classe: DESTRUIDO
+        self.assertEqual(VITORIA, fase.status())       # VITORIA = 'não há porcos ou há pássaros e não há porcos'
+
+        fase.adicionar_obstaculo(Obstaculo())
+        self.assertEqual(VITORIA, fase.status(),
+                         'Obstáculo não interfere no fim do jogo')
+
+        fase.adicionar_porco(PorcoFake())  # adicionando um porco, há porcos e não há pássaros, portanto = DERROTA
+        self.assertEqual(DERROTA, fase.status(),
+                         'Com Porco ativo e sem pássaro para lançar, o jogo '
+                         'deveria acabar')
+
+        fase.adicionar_passaro(PassaroFake())  # adicionando um pássaro, há porcos e pássaros, portanto = EM_ANDAMENTO
+        self.assertEqual(EM_ANDAMENTO, fase.status(),
+                         'Com Porco ativo e com pássaro para lançar, o jogo '
+                         'não deveria acabar')
+    """
+
+"raiz / fase.py"
+def fase_py2():
+    """
+    def status(self):
+        if not self.possui_porco_ativo():
+            return VITORIA
+        elif self.possui_passaro_ativo():
+            return EM_ANDAMENTO
+        else:
+            return DERROTA
+    """
+    # Os métodos chamados não existem, eles serão criados
+
+"raiz / fase.py"  # métodos novos adicionados
+def fase_py3():
+    """
+    def _possui_porco_ativo(self):
+        for porco in self._porcos:
+            if porco.status == ATIVO:
+                return True
+        return False
+
+    def _possui_passaro_ativo(self):
+        for passaro in self._passaros:
+            if passaro.status == ATIVO:
+                return True
+        return False
+    """
