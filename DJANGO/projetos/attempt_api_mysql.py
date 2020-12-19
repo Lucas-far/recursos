@@ -1,5 +1,8 @@
 
 
+""""""
+
+"Configurações iniciais"
 def terminal():
     """
     pip install django django-bootstrap4 mysqlclient PyMySQL
@@ -38,6 +41,10 @@ def pp_urls():
 
 
 
+"TEMPLATE 1"
+"mostrar se o cliente: 1. está logado /  2. não possui conta / 3. possui conta e não está logado"
+"se estiver logado, mostrar nome do cliente e tarefas disponíveis"
+"se não, mostrar cliente como anônimo, e as opções de criar conta e logar"
 # View: index
 def views():
     """
@@ -76,9 +83,21 @@ def template():
             {% if request.user.is_anonymous == True %}
                 <h2 class="text-secondary">Você está anônimo</h2>
                 <p class="text-secondary">é preciso criar uma conta, para ter acesso ao site</p>
-                <a class="btn btn-primary" href="{% url 'criar-conta/' %}">Criar sua conta</a>
             {% else %}
                 <h2 class="text-secondary">Seja bem-vindo, {{ request.user }}</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <a class="btn btn-primary" href="#">Adicionar tarefa</a>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <a class="btn btn-danger" href="#">Deletar tarefa</a>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <a class="btn btn-success" href="#">Ver tarefas</a>
+                        </div>
+                    </div>
+                </div>
             {% endif %}
         </div>
     {% bootstrap_javascript jquery='full' %}
@@ -105,6 +124,7 @@ def terminal2():
 
 
 
+"TEMPLATE 2: criar conta"
 # View: sign_up
 def views2():
     """
@@ -129,7 +149,7 @@ def views2():
             else:
                 messages.error(request, 'Senha inicial e de confirmação, não são idênticas!')
 
-        return render(request, 'criar-conta.html')
+        return render(request, 'sign-up-template.html')
     """
 
 # Rota da view: criar-conta/
@@ -137,7 +157,7 @@ def pa_urls2():
     """
     from django.urls import path
     from .views import *
-    urlpatterns = [path('criar-conta/', sign_up, name='criar-conta/']
+    urlpatterns = [path('sign_up/', sign_up, name='sign_up/']
     """
 
 # Template: criar-conta.html
@@ -150,7 +170,7 @@ def template2():
     <head>
         {% bootstrap_css %}
         <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"> <!-- font-family: Itim -->
-        <link href="{% static 'css/criar-conta.css' %}" rel="stylesheet">
+        <link href="{% static 'css/sign-up-styles' %}" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Criar uma conta</title>
@@ -167,7 +187,7 @@ def template2():
 
         <main>
             <div class="container">
-                <form action="{% url 'criar-conta/' %}" autocomplete="off" id="this-form" method="post">
+                <form action="{% url 'sign_up/' %}" autocomplete="off" id="this-form" method="post">
                     {% csrf_token %}
                     {% bootstrap_messages %}
 
@@ -246,4 +266,151 @@ def css2():
     hr {background-color: aqua; height: 3px; box-shadow: 0 0 50px aqua; border-radius: 10px;}
     .form-control {background-color: #171A21;}
     .form-control:focus {background-color: #171A21;}
+    """
+
+
+
+
+
+"TEMPLATE 3: login"
+# View: sign_in
+def views3():
+    """
+    from django.contrib.auth import authenticate, login
+
+    def sign_in(request):
+        if str(request.method) == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Login efetuado com sucesso!')
+                return redirect('index')
+            else:
+                messages.error(request, 'O usuário ou a senha não existem!')
+        return render(request, 'sign-in-template.html')
+    """
+
+# Rota da view: login/
+def pa_urls3():
+    """
+    from .views import *
+
+    urlpatterns = [path('sign_in/', sign_in, name='sign_in/')]
+    """
+
+# Template: login.html
+def template3():
+    """
+    <!DOCTYPE html>
+    {% load bootstrap4 %}
+    {% load static %}
+    <html lang="en">
+    <head>
+        {% bootstrap_css %}
+        <link href="{% static 'css/sign-in-styles.css' %}" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Efetuar login</title>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-dark"><a href="{% url 'index' %}">Voltar à página Inicial</a></button>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="container">
+                <form action="{% url 'sign_in/' %}" class="form" id="this-form" method="post">
+                    <fieldset class="fieldset pb30px text-center">Login</fieldset>
+                    {% csrf_token %}
+                    {% bootstrap_messages %}
+
+                    <div class="row">
+                        <div class="form-group ma mb20px">
+                            <label class="blink-text" for="username">Nome de usuário</label>
+                            <label class="sr-only" for="username">Campo para escrever o nome de usuário/apelido</label>
+                            <input class="form-control" id="username" max="100" min="2" name="username" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group ma mb20px">
+                            <label class="blink-text"  for="password">Senha</label>
+                            <label class="sr-only" for="password">Campo para escrever senha</label>
+                            <input class="form-control" id="password" max="100" min="2" name="password" type="password" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="ma mb20px">
+                            <button class="btn btn-dark" form="this-form" type="submit">Logar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    {% bootstrap_javascript jquery='full' %}
+    </body>
+    </html>
+    """
+
+# Css: login.css
+def css3():
+    """
+    body {background-color: #171A21; color: #0e3742;}
+    .container-fluid {position: fixed; top: 0; background-color: #171A21;} /* cor de fundo deve ser = body */
+    .btn-dark:hover a {text-decoration: none;}
+    main {margin-top: 100px;}  /* espaçamento necessário para evitar que o conteúdo seja sobreposto pelo botão fixo */
+    .fieldset {
+        font-size: 7em;
+        color: #fff;
+        text-shadow: 0 1px 10px #1b2838,
+                     0 2px 20px #2a475e,
+                     0 3px 0 #1b2838,
+                     0 4px 0 #2a475e,
+                     0 5px 0 #1b2838,
+                     0 6px 0 #2a475e,
+                     0 7px 0 #1b2838,
+                     0 8px 0 #2a475e,
+                     0 9px 0 #1b2838,
+                     0 10px 0 #2a475e;
+        }
+    .pb30px {padding-bottom: 30px;}
+    .blink-text {animation: blink-text linear infinite 15s;}
+    .form-control {background-color: #171A21;}
+    .form-control:focus {background-color: #171A21;}
+    .ma {margin: auto;}
+    .mb20px {margin-bottom: 20px;}
+
+    @keyframes blink-text {
+        0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92% {
+            color: #fff; text-shadow: none;
+        }
+        18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100% {
+            color: #171A21;
+            text-shadow: 0 0 5px #03bcf4,
+                         0 0 6px #03bcf4,
+                         0 0 7px #03bcf4,
+                         0 0 8px #03bcf4,
+                         0 0 9px #03bcf4;
+        }
+    }
+    """
+
+
+
+
+
+"TEMPLATE 1: adicionar os templates de criar conta e login"  # inserir dentro do {% if %}{% endif %}
+def template4():
+    """
+    <!-- Opções para quem não está logado -->
+    <a class="btn btn-primary" href="{% url 'sign_up/' %}">Criar conta</a>
+    <a class="btn btn-success" href="{% url 'sign_in/' %}">Login</a>
     """

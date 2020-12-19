@@ -196,19 +196,6 @@ def fase_testes_py2():
                          'não deveria acabar')
     """
 
-"raiz / fase.py"
-def fase_py2():
-    """
-    def status(self):
-        if not self.possui_porco_ativo():
-            return VITORIA
-        elif self.possui_passaro_ativo():
-            return EM_ANDAMENTO
-        else:
-            return DERROTA
-    """
-    # Os métodos chamados não existem, eles serão criados
-
 "raiz / fase.py"  # métodos novos adicionados
 def fase_py3():
     """
@@ -224,3 +211,16 @@ def fase_py3():
                 return True
         return False
     """
+
+"raiz / fase.py"
+def fase_py2():
+    """
+    def status(self):
+        if not self.possui_porco_ativo():
+            return VITORIA
+        elif self.possui_passaro_ativo():
+            return EM_ANDAMENTO
+        else:
+            return DERROTA
+    """
+    # Os métodos chamados não existem, eles serão criados
