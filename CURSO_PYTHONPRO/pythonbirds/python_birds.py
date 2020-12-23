@@ -69,7 +69,7 @@ def efetuar_push():
 
 # todo CURSO: Python Birds / AULA: Atributo Complexo
 
-def classe_4():
+def exemplo():
     """
     class Pessoa:
         def __init__(self, nome: str = 'indefinido', idade: int = 18, *filhos):  # iterável (certo = *) (errado = [])
@@ -94,12 +94,14 @@ def classe_4():
     """
 
 # todo CURSO: Python Birds / AULA: Composição
-
 "/home/lucas/PycharmProjects/recursos/PYTHON/POO/composicao.py"
 
 # todo CURSO: Python Birds / AULA: Fase e Atores
 
-def modulo_fase_classe_fase():
+"Módulo"  # fase.py
+"Local"   # raiz
+"Função"  # def __init__
+def fase_py():
     """
     class Fase():
         def __init__(self, intervalo_de_colisao=1):
@@ -109,8 +111,11 @@ def modulo_fase_classe_fase():
             self._obstaculos = []
     """
 
-# Adicionando imagens à placa gráfica (atores e objetos)
-def modulo_fase():
+"Módulo"    # fase.py
+"Local"     # raiz
+"Função"    # def adicionar_obstaculo / def adicionar_porco / def adicionar_passaro
+"Objetivo"  # Adição de imagens à placa gráfica (atores e objetos)
+def fase_py2():
     """
     def adicionar_obstaculo(self, *obstaculos):
         self._obstaculos.extend(obstaculos)
@@ -124,10 +129,14 @@ def modulo_fase():
 
 # todo CURSO: Python Birds / AULA: Sobrescrita de Atributo
 
+"Módulo"    # atores.py
+"Local"     # raiz
+"Classe"    # Obstaculo / Porco / PassaroVermelho
+"Objetivo"  # alterar variável _carater_ativo
 def atores_py():
     """
     class Obstaculo(Ator):
-    _carater_ativo = 'O'
+        _carater_ativo = 'O'
 
     class Porco(Ator):
         _carater_ativo = '@'
@@ -144,60 +153,27 @@ def tipos():
     testes integrados ()
     """
 
-"raiz / dir testes / fase_testes.py"
-def fase_testes_py():
+"Módulo"    # fase.py
+"Local"     # raiz
+"Função"    # def status
+"Objetivo"  # correção do retorno do método, pois, se o jogo acabou sem porcos, então é: VITÓRIA
+def fase_py3():
     """
-    def teste_acabou_sem_porcos(self):
-        fase = Fase()
-        self.assertEqual(VITORIA, fase.status())
+    def status(self):
+        return VITORIA
     """
-    #  Esse método de teste contendo um erro proposital. Segurar o ctrl e clicar em [ status() ] de [ fase.status() ]
 
-
-"raiz / fase.py"
-def fase_py():
-    """
-        def status(self):
-            return EM_ANDAMENTO
-    """
-    # Correção do método
-    "return VITORIA"  # valor modificado na função [ status ], pois, se o jogo acabou sem porcos, então é: VITÓRIA
+"Módulo"    # fase_testes.py
+"Local"     # raiz/testes
+"Função"    # def teste_acabou_sem_porcos
+"Objetivo"  # teste do método para saber se ele passa...................................................................
 
 # todo CURSO: Python Birds / AULA: Método Protegido
 
-"raiz / dir testes / fase_testes.py"
-def fase_testes_py2():
-    """
-    def teste_acabou_com_porcos_e_passaros(self):
-        fase = Fase()
-        porcos = [PorcoFake(1, 1) for _ in range(2)]      # criando 2 porcos
-        passaros = [PassaroFake(1, 1) for _ in range(2)]  # criando 2 pássaros
-        fase.adicionar_porco(*porcos)
-        fase.adicionar_passaro(*passaros)
-
-        self.assertEqual(EM_ANDAMENTO, fase.status())  # EM_ANDAMENTO = há pássaros e porcos
-
-        for ator in porcos + passaros:                 # concatenação de listas
-            ator.status = DESTRUIDO                    # modificar cada índice para ter atributo de classe: DESTRUIDO
-        self.assertEqual(VITORIA, fase.status())       # VITORIA = 'não há porcos ou há pássaros e não há porcos'
-
-        fase.adicionar_obstaculo(Obstaculo())
-        self.assertEqual(VITORIA, fase.status(),
-                         'Obstáculo não interfere no fim do jogo')
-
-        fase.adicionar_porco(PorcoFake())  # adicionando um porco, há porcos e não há pássaros, portanto = DERROTA
-        self.assertEqual(DERROTA, fase.status(),
-                         'Com Porco ativo e sem pássaro para lançar, o jogo '
-                         'deveria acabar')
-
-        fase.adicionar_passaro(PassaroFake())  # adicionando um pássaro, há porcos e pássaros, portanto = EM_ANDAMENTO
-        self.assertEqual(EM_ANDAMENTO, fase.status(),
-                         'Com Porco ativo e com pássaro para lançar, o jogo '
-                         'não deveria acabar')
-    """
-
-"raiz / fase.py"  # métodos novos adicionados
-def fase_py3():
+"Módulo"  # fase.py
+"Local"   # raiz
+"Função"  # def _possui_porco_ativo / def _possui_passaro_ativo (criados)
+def fase_py4():
     """
     def _possui_porco_ativo(self):
         for porco in self._porcos:
@@ -212,8 +188,10 @@ def fase_py3():
         return False
     """
 
-"raiz / fase.py"
-def fase_py2():
+"Módulo"  # fase.py
+"Local"   # raiz
+"Função"  # def status
+def fase_py5():
     """
     def status(self):
         if not self.possui_porco_ativo():
@@ -223,4 +201,71 @@ def fase_py2():
         else:
             return DERROTA
     """
-    # Os métodos chamados não existem, eles serão criados
+
+"Módulo"    # fase_testes.py
+"Local"     # raiz/testes
+"Função"    # def teste_acabou_com_porcos_e_passaros
+"Objetivo"  # teste do método para saber se ele passa...................................................................
+
+# todo CURSO: Python Birds / AULA: Ciclo de Vida de Objetos
+
+"Módulo"  # fase.py
+"Local"   # raiz
+"Função"  # def lancar
+def fase_py6():
+    """
+    def lancar(self, angulo, tempo):
+        for passaro in self._passaros:
+        if not passaro.foi_lancado():
+            passaro.lancar(angulo, tempo)
+            break
+    """
+
+"Módulo"    # fase_testes.py
+"Local"     # raiz/testes
+"Função"    # def teste_lancar_passaro_sem_erro_quando_nao_existe_passaro
+"Objetivo"  # teste do método para saber se ele passa...................................................................
+
+# todo CURSO: Python Birds / AULA: Fase Completa
+
+"Módulo"  # fase.py
+"Local"   # raiz
+"Função"  # class Fase / def calcular_pontos
+def fase_py7():
+    """
+    def calcular_pontos(self, tempo):
+        for passaro in self._passaros:
+            passaro.calcular_posicao(tempo)
+            for alvo in self._obstaculos + self._porcos:
+                passaro.colidir(alvo, self.intervalo_de_colisao)
+            passaro.colidir_com_chao()
+        pontos = [self._transformar_em_ponto(a) for a in self._passaros+self._obstaculos+self._porcos]
+
+        return pontos
+    """
+
+"Módulo"    # fase_testes.py
+"Local"     # raiz/testes
+"Função"    # def teste_intervalo_de_colisao_padrao
+"Objetivo"  # teste do método para saber se ele passa...................................................................
+
+"Módulo"    # fase_testes.py
+"Local"     # raiz/testes
+"Função"    # def teste_intervalo_de_colisao_nao_padrao
+"Objetivo"  # teste do método para saber se ele passa...................................................................
+
+# todo CURSO: Python Birds / AULA: Posição de Ator
+
+"Módulo"    # atores.py
+"Local"     # raiz
+"Função"    # class Ator / def calcular_posicao
+def atores_py2():
+    """
+    def calcular_posicao(self, tempo):
+        return self.x, self.y
+    """
+
+"Módulo"    # atores_testes.py
+"Local"     # raiz/testes
+"Função"    # class AtorTestes / def teste_ator_posicao
+"Objetivo"  # teste do método para saber se ele passa...................................................................
