@@ -14,24 +14,26 @@ Instalar:
     pip install pytube
 """
 
-# from pytube import YouTube
-# from os import chdir, getlogin
-#
-# chdir(f'/home/{getlogin()}')
-#
+from pytube import YouTube
+from os import chdir, getlogin
+chdir(f'/home/{getlogin()}')
+url = 'https://www.youtube.com/watch?v=X7SgFfiCiiI'
+target_video = YouTube(url)  # criação do objeto
+exec_download = target_video.streams.get_by_itag(251)  # inteiro que representa as características do vídeo
+print(f'======= INFO =======\nVídeo alvo: {url}\nStatus: baixando')
+exec_download.download(filename=f'vid')
+print(f'======= INFO =======\nVídeo alvo: {url}\nStatus: finalizado')
+
 # "Link compatível (gera itags)"
-# # v = YouTube('https://www.youtube.com/watch?v=sVnfv3-SeuU')
-# # for formats in v.streams:
-# #     print(formats.itag)
-#
+# v = YouTube('https://www.youtube.com/watch?v=sVnfv3-SeuU')
+# for formats in v.streams:
+#     print(formats.itag)
+
 # "Link incompatível (não gera itags)"
-# # v = YouTube('https://www.youtube.com/watch?v=vtyV8DXAYIU')
-# # for formats in v.streams:
-# #     print(formats.itag)
-#
-# url = 'https://www.youtube.com/watch?v=sVnfv3-SeuU'
-# target_video = YouTube(url)  # criação do objeto
-#
+# v = YouTube('https://www.youtube.com/watch?v=vtyV8DXAYIU')
+# for formats in v.streams:
+#     print(formats.itag)
+
 # for formats in target_video.streams:
 #     print(formats.itag)
 #
@@ -61,41 +63,36 @@ Instalar:
 #     <Stream: itag="250" mime_type="audio/webm" abr="70kbps" acodec="opus" progressive="False" type="audio">
 #     <Stream: itag="251" mime_type="audio/webm" abr="160kbps" acodec="opus" progressive="False" type="audio">
 #     """
+
+"OFICIAL"
+# from pytube import YouTube
 #
-# exec_download = target_video.streams.get_by_itag(160)  # inteiro que representa as características do vídeo
-# print(f'======= INFO =======\nVídeo alvo: {url}\nStatus: baixando')
+# media_list = []
+# text = \
+#         """
+#         ========== BEM-VINDO ==========
+#         1. Insira a url de um ou múltiplos vídeos (um por vez)
+#         2. Caso todas as urls tenham sido inseridas, digite "download", para iniciar o seu download
+#         3. Insira as urls clicando na seta abaixo\n
+#         """
+# print(text)
+# while True:
+#     url = input('-----> ')
+#     if url == 'download':
+#         break
+#     media_list.append(url)
 #
-# exec_download.download(filename=f'vid')
-# print(f'======= INFO =======\nVídeo alvo: {url}\nStatus: finalizado')
-
-from pytube import YouTube
-
-media_list = []
-text = \
-        """
-        ========== BEM-VINDO ==========
-        1. Insira a url de um ou múltiplos vídeos (um por vez)
-        2. Caso todas as urls tenham sido inseridas, digite "download", para iniciar o seu download
-        3. Insira as urls clicando na seta abaixo\n
-        """
-print(text)
-while True:
-    url = input('-----> ')
-    if url == 'download':
-        break
-    media_list.append(url)
-
-for i, video in enumerate(media_list):
-    index = 0
-    itags = [22, 299, 303, 136, 247, 298, 302, 135, 244, 134, 243, 133, 242, 160, 278, 140, 249, 250, 251]
-    media_object = YouTube(video)
-    while index < len(itags):
-        try:
-            media_format = media_object.streams.get_by_itag(itags[index])
-            print(f"======= INFO =======\nVídeo alvo: {i}\nSTATUS: baixando")
-            media_format.download()
-            print(f"======= INFO =======\nVídeo alvo: {i}\nSTATUS: concluido")
-            break
-        except AttributeError:
-            print(f'Download falhou com itag: {itags[index]}')
-            index += 1
+# for i, video in enumerate(media_list):
+#     index = 0
+#     itags = [22, 299, 303, 136, 247, 298, 302, 135, 244, 134, 243, 133, 242, 160, 278, 140, 249, 250, 251]
+#     media_object = YouTube(video)
+#     while index < len(itags):
+#         try:
+#             media_format = media_object.streams.get_by_itag(itags[index])
+#             print(f"======= INFO =======\nVídeo alvo: {i}\nSTATUS: baixando")
+#             media_format.download()
+#             print(f"======= INFO =======\nVídeo alvo: {i}\nSTATUS: concluido")
+#             break
+#         except AttributeError:
+#             print(f'Download falhou com itag: {itags[index]}')
+#             index += 1

@@ -3,7 +3,6 @@
 """"""
 
 # Configurações iniciais
-
 def terminal():
     """
     pip install django django-bootstrap4 mysqlclient PyMySQL
