@@ -3,6 +3,10 @@
 """
 Objetivo:
          usar um formulário modelo a partir de um bdd
+
+Fonte:
+      /home/lucas/PycharmProjects/django_model_form
+
 OBS:
     será usado uma configuração baseada no postgresql
 """
@@ -15,7 +19,7 @@ def pgadmin4():
     4. Pós carregamento -> [ Botão direito ] [ Databases ] [ Create ] [ Database ] [ Name = dtb_django_model_form ]
     """
 
-"pip install django-stdimage"  # não obrigatório (usado como campo do modelo)
+"pip install django-stdimage"  # não obrigatório (usado como campo de upload de imagem do modelo)
 def terminal():
     """
     pip install django==2.2.17 django-bootstrap4 django-stdimage psycopg2-binary whitenoise
@@ -211,7 +215,7 @@ def templates3():
     <body>
         {% include 'fixed-return-button.html' %}
         <div class="container">
-            <form class="form" action="{% url 'interview' %}" enctype="multipart/form-data" id="this-form" method="post">
+            <form autocomplete="off" class="form" enctype="multipart/form-data" id="this-form" method="post">
                 <fieldset>
                     <legend class="text-center">Diga-nos sobre você</legend>
                     {% csrf_token %}
@@ -239,7 +243,8 @@ def css():
     .ma {margin: auto;}
     """
 
-# todo Formulário class based view
+# todo Formulário class based view (FormView)
+"InterviewFormView"
 def views2():
     """
     from django.views.generic import FormView
@@ -284,7 +289,7 @@ def templates4():
     <body>
         {% include 'fixed-return-button.html' %}
         <div class="container">
-            <form class="form" action="{% url 'interview2' %}" enctype="multipart/form-data" id="this-form" method="post">
+            <form autocomplete="off" class="form" enctype="multipart/form-data" id="this-form" method="post">
                 {% csrf_token %}
                 {% bootstrap_messages %}
                 <fieldset><legend class="text-center">Diga-nos sobre você</legend></fieldset>
@@ -311,8 +316,14 @@ def css2():
     """
 
 # todo Formulário function based view (html puro)
+"interview2"
 def views3():
     """
+    from .models import Interview
+    from django.contrib import messages
+    from django.shortcuts import redirect
+    from django.shortcuts import render
+
     def interview2(request):
         if str(request.method) == 'POST':
             if request.POST.get('full_name') \
@@ -442,7 +453,7 @@ def templates6():
     <body>
         {% include 'fixed-return-button.html' %}
         <div class="container">
-            <form class="form" action="{% url 'interview3' %}" enctype="multipart/form-data" id="this-form" method="post">
+            <form autocomplete="off" class="form" enctype="multipart/form-data" id="this-form" method="post">
                 {% csrf_token %}
                 {% bootstrap_messages %}
                 <fieldset><legend class="text-center">Diga-nos sobre você</legend></fieldset>
@@ -468,4 +479,146 @@ def css3():
     .ma {margin: auto;}
     """
 
-# todo Formulário class absed view CreateView
+# todo Formulário class based view (CreateView)
+"InterviewCreateView"
+def views4():
+    """
+    from django.contrib.messages.views import SuccessMessageMixin
+    from django.urls import reverse_lazy
+    from django.views.generic import CreateView
+    from .models import Interview
+
+    class InterviewCreateView(SuccessMessageMixin, CreateView):
+        fields = ('full_name', 'email', 'age', 'gender', 'nationality',
+                  'brief_description', 'self_grade', 'passtimes', 'avatar')
+        model = Interview
+        success_message = 'Formulário preenchido com sucesso. Obrigado por participar!'
+        success_url = reverse_lazy('index')
+        template_name = 'interview4.html'
+    """
+
+def pa_urls4():
+    """
+    from .views import InterviewFormView
+    urlpatterns = [path('interview4/', InterviewCreateView.as_view(), name='interview4')]
+    """
+
+"form-fields.html"
+def templates7():
+    """
+    <div class="row mt-2">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="full_name">Campo para escrever seu nome completo</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" min="2" max="200" placeholder="seu nome completo" size="20" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="email">Campo para escrever seu email</label>
+            <input type="email" class="form-control" id="email" name="email" min="2" max="200" placeholder="seu email" size="20" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="age">Campo para escrever idade</label>
+            <input type="number" class="form-control" id="age" name="age" min="1" max="120" placeholder="sua idade" size="20" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="exampleFormControlSelect1">Campo para selecionar um gênero</label>
+            <label>Escolha um gênero</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="gender">
+                <option>escolher...</option>
+                <option>feminino</option>
+                <option>masculino</option>
+                <option>outro</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="nationality">Campo para escrever nacionalidade</label>
+            <input type="text" class="form-control" id="nationality" name="nationality" min="1" max="120" placeholder="sua nacionalidade" size="20" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2 col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+            <label class="sr-only" for="brief_description">Campo para falar algo sobre você</label>
+            <textarea class="form-control" id="brief_description" name="brief_description" placeholder="Fale algo sobre você" rows="7" cols="40" required></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="self_grade">Campo para dar a você uma nota</label>
+            <input type="number" step="0.01" class="form-control" id="self_grade" name="self_grade" min="1" max="10" placeholder="sua nota auto-avaliativa" size="20" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="passtimes">Campo para escrever nacionalidade</label>
+            <input type="text" class="form-control" id="passtimes" name="passtimes" min="1" placeholder="passatempo favorito" size="20" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group ma mb-2">
+            <label class="sr-only" for="avatar">Campo para fazer upload do seu avatar</label>
+            <label>Forneça seu avatar</label>
+            <input type="file" class="form-control-file" id="avatar" name="avatar">
+        </div>
+    </div>
+    """
+
+"interview4.html"  # Por ser uma CreateView, não recomenda-se ter o atributo [ action="" ]
+def templates8():
+    """
+    <!DOCTYPE html>
+    {% load bootstrap4 %}
+    {% load static %}
+    <html lang="en">
+    <head>
+        {% bootstrap_css %}
+        <link href="{% static 'css/interview4-styles.css' %}" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta content="ie-edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <title>Formulário 4 de entrevista</title>
+    </head>
+    <body>
+        {% include 'fixed-return-button.html' %}
+        <div class="container">
+            <form autocomplete="off" enctype="multipart/form-data" id="this-form" method="post">
+                {% csrf_token %}
+                {% bootstrap_messages %}
+                <fieldset><legend class="text-center">Diga-nos sobre você</legend></fieldset>
+                <div class="row">
+                    <div class="form-group ma">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ma">
+                            {% include 'form_fields.html' %}
+                            <div class="container text-center mb-5">
+                                <button class="btn btn-dark" form="this-form" type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    {% bootstrap_javascript jquery='full' %}
+    </body>
+    </html>
+    """
+
+"interview4-styles.css"
+def css4():
+    """
+    body {background-color: #292929; color: silver;}
+    .ma {margin: auto;}
+    """
