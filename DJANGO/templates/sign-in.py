@@ -47,6 +47,15 @@ def views():
         return render(request, 'sign-in-template.html')
     """
 
+# Lógica da saída
+def views2():
+    """
+    def sign_out(request):
+        messages.success(request, 'Saída efetuada com sucesso')
+        logout(request)
+        return redirect('index')
+    """
+
 def pa_urls():
     """
     from django.urls import path
@@ -97,7 +106,7 @@ def templates3():
     <head>
         {% bootstrap_css %}
         <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"> <!-- font-family: Itim -->
-        <link href="{% static 'css/sign-up-styles.css' %}" rel="stylesheet">
+        <link href="{% static 'css/sign-in-styles.css' %}" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Criar uma conta</title>
@@ -105,13 +114,10 @@ def templates3():
 
     <body>
         {% include 'fixed-return-button.html' %}
-        <main class="mt-5">
-            <div class="container mt-5 text-center">
-                <h1 class="my-h1 ">Criação de conta</h1>
-                <hr>
-            </div>
+        <main>
             <div class="container">
                 <form action="{% url 'signin' %}" autocomplete="off" id="this-form" method="post">
+                    <fieldset class="fieldset pb30px text-center">Login</fieldset>
                     {% csrf_token %}
                     {% bootstrap_messages %}
                     {% include 'sign-in-form.html' %}
@@ -120,7 +126,7 @@ def templates3():
             <div class="container">
                 <div class="row">
                     <div class="ma mt-3">
-                        <button class="btn btn-dark" type="submit" form="this-form">Registrar</button>
+                        <button class="btn btn-dark" type="submit" form="this-form">Logar</button>
                     </div>
                 </div>
             </div>
