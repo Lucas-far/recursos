@@ -1,6 +1,8 @@
 
 
 """
+Módulo: filter_vs_get.py
+
 Objetivo:
          mostrar a diferença entre uso de objeto com métodos [ filter ] vs [ get ]
 """

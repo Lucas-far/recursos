@@ -1,6 +1,8 @@
 
 
 """
+Módulo >>> menu.py
+
 Objetivo:
          criar um menu responsivo para tela menor e maior
 """

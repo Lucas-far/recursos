@@ -1,6 +1,8 @@
 
 
 """
+Módulo: update_view.py
+
 Objetivo:
          template usado parar editar um objeto já criado, de um bdd
 """

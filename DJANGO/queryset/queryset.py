@@ -1,11 +1,17 @@
 
 
+"""
+Módulo >>> queryset.py
+
+Objetivo:
+         exemplificar um queryset de um modelo e como fazer uso dele
+"""
+
 def terminal():
     """
     python manage.py shell
     from pa.models import *
     q = Interview.objects.all().values()
-
     q
 
         <QuerySet [
@@ -19,7 +25,6 @@ def terminal():
 
     q[0]['id']        >>> 10
     q[0]['full_name'] >>> 'Pessoa2'
-
-    q[1]['email'] >>> 'pessoa1@gmail.com'
-    q[1]['age']   >>> 25
+    q[1]['email']     >>> 'pessoa1@gmail.com'
+    q[1]['age']       >>> 25
     """

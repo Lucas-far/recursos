@@ -1,13 +1,18 @@
 
 
 """
-Entrar com uma conta já criada: /home/lucas/PycharmProjects/too-basic-api
+Módulo >>> sign-in.py
+
+Objetivo:
+         criar um template que execute a entrada de uma conta já criada
+
+Exemplo:
+        /home/lucas/PycharmProjects/attempt_api
 """
 
-# Configurações iniciais
 def terminal():
     """
-    pip install django django-bootstrap4
+    pip install django==2.2.17 django-bootstrap4
     django-admin startproject pp .
     django-admin startapp pa
     pip freeze > requirements.txt

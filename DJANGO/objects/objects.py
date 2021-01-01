@@ -1,5 +1,12 @@
 
 
+"""
+Módulo: objects.py
+
+Objetivo:
+         exemplificar métodos úteis usados com objetos de modelos
+"""
+
 def metodos_comuns():
     """
     Modelo.objects.all()                     # Armazenamento de todos os objetos de um bdd

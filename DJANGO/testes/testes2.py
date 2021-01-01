@@ -1,11 +1,27 @@
 
 
 """
+Módulo >>> testes2.py
 
-Curso  # Programação Web com Python e Django framework: Essencial
-Local  # Seção 6:Testando seu projeto
-Aula   # 60. Testando models
+Objetivo:
+         exemplificar uma maneira de teste menos comuns para projetos Django
 """
+
+def fonte():
+    """
+    Curso  # Programação Web com Python e Django framework: Essencial
+    Seção  # Seção 6:Testando seu projeto
+    Aula   # 60. Testando models
+    """
+
+def terminal():
+    """
+    pip install coverage
+    """
+
+"==============="
+# Primeiro teste
+"==============="
 
 def models():
     """
@@ -22,6 +38,41 @@ def models():
             return self.full_name
     """
 
+# Exemplo de teste menos eficiente
+def teste_models_regular():
+    """
+    from pa.models import *
+    from django.test import TestCase
+
+    class NameTestCase(TestCase):
+
+        def setUp(self):
+            self.var = str(Name.objects.create(full_name='Ricardo Armando'))
+
+        def test_name(self):
+            var = Name.objects.get(full_name='Ricardo Armando')
+            self.assertEqual(self.var, var.__str__())
+    """
+
+# Exemplo de teste mais eficiente
+def teste_models_bom():
+    """
+    from pa.models import *
+    from django.test import TestCase
+    from model_mommy import mommy
+
+    class ModelNameTestCase(TestCase):
+        def setUp(self):
+            self.var = mommy.make('Name')
+
+        def test_str(self):
+            self.assertEquals(str(self.var), self.var.full_name)
+    """
+
+"=============="
+# Segundo teste
+"=============="
+
 def models2():
     """
     class Age(models.Model):
@@ -34,6 +85,41 @@ def models2():
         def __str__(self):
             return str(self.age)
     """
+
+# Exemplo de teste menos eficiente
+def teste_models2_regular():
+    """
+    from pa.models import *
+    from django.test import TestCase
+
+    class AgeTestCase(TestCase):
+
+        def setUp(self):
+            self.var = str(Age.objects.create(age=18))
+
+        def test_age(self):
+            var = Age.objects.get(age=18)
+            self.assertEqual(self.var, var.__str__())
+    """
+
+# Exemplo de teste mais eficiente
+def teste_models2_bom():
+    """
+    from pa.models import *
+    from django.test import TestCase
+    from model_mommy import mommy
+
+    class ModelAgeTestCase(TestCase):
+        def setUp(self):
+            self.var = mommy.make('Age')
+
+        def test_str(self):
+            self.assertEquals(str(self.var), str(self.var.age))
+    """
+
+"==============="
+# Terceiro teste
+"==============="
 
 def models3():
     """
@@ -50,63 +136,8 @@ def models3():
             return self.neighborhood
     """
 
-def teste_models():
-    """
-    from pa.models import *
-    from django.test import TestCase
-
-    class NameTestCase(TestCase):
-
-        def setUp(self):
-            self.var = str(Name.objects.create(full_name='Ricardo Armando'))
-
-        def test_name(self):
-            var = Name.objects.get(full_name='Ricardo Armando')
-            self.assertEqual(self.var, var.__str__())
-    """
-
-    """
-    from pa.models import *
-    from django.test import TestCase
-    from model_mommy import mommy
-    
-    class ModelNameTestCase(TestCase):
-        def setUp(self):
-            self.var = mommy.make('Name')
-    
-        def test_str(self):
-            self.assertEquals(str(self.var), self.var.full_name)
-    """
-
-def teste_models2():
-    """
-    from pa.models import *
-    from django.test import TestCase
-
-    class AgeTestCase(TestCase):
-
-        def setUp(self):
-            self.var = str(Age.objects.create(age=18))
-
-        def test_age(self):
-            var = Age.objects.get(age=18)
-            self.assertEqual(self.var, var.__str__())
-    """
-
-    """
-    from pa.models import *
-    from django.test import TestCase
-    from model_mommy import mommy
-    
-    class ModelAgeTestCase(TestCase):
-        def setUp(self):
-            self.var = mommy.make('Age')
-    
-        def test_str(self):
-            self.assertEquals(str(self.var), str(self.var.age))
-    """
-
-def teste_models3():
+# Exemplo de teste menos eficiente
+def teste_models3_regular():
     """
     from pa.models import *
     from django.test import TestCase
@@ -121,18 +152,24 @@ def teste_models3():
             self.assertEqual(self.var, var.__str__())
     """
 
+# Exemplo de teste mais eficiente
+def test_models3_bom():
     """
     from pa.models import *
     from django.test import TestCase
     from model_mommy import mommy
-    
+
     class ModelAddressTestCase(TestCase):
         def setUp(self):
             self.var = mommy.make('Address')
-    
+
         def test_str(self):
             self.assertEquals(str(self.var), self.var.neighborhood)
     """
 
-"python manage.py test"        # Execução do teste
-"coverage run manage.py test"  # Execução do teste [ pip install coverage ]
+# Executando os testes
+def terminal2():
+    """
+    python manage.py test
+    coverage run manage.py test
+    """

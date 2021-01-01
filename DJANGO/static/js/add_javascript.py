@@ -1,5 +1,12 @@
 
 
+"""
+Módulo: add_javascript.py
+
+Objetivo:
+         exemplificar formas de uso de funções js
+"""
+
 def exemplo():
     """
     function mensagem() {
@@ -37,8 +44,8 @@ def exemplo4():
     }
     """
 
-# Funções js podem ser ou não chamadas dentro de uma tag de botão
-""" OBS: <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script> """  # mandatória
+"OBS"                # Funções js podem ser ou não chamadas dentro de uma tag de botão
+"<script></script>"  # mandatória
 def body():
     """
     <body>

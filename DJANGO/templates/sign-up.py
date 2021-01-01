@@ -1,7 +1,13 @@
 
 
 """
-Criar uma conta: /home/lucas/PycharmProjects/too-basic-api
+Módulo >>> sign-up.py
+
+Objetivo:
+         criar um template que execute a criação de um objeto de usuário
+
+Criar uma conta:
+                /home/lucas/PycharmProjects/attempt_api
 """
 
 # Configurações iniciais

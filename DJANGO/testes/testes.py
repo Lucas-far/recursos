@@ -1,13 +1,22 @@
 
 
 """
-Curso:        # Programação Web com Python e Django framework: Essencial
-Aula pausada: # 59. Entendendo e configurando os testes
-Minuto:       # 08:27
+Módulo >>> testes.py
+
+Objetivo:
+         exemplificar uma maneira de teste comum para projetos Django
 """
 
-# Testes regulares ficam em: raiz/pa/tests.py
-"pythton manage.py test"  # comando para executar testes
+def fonte():
+    """
+    Curso  # Programação Web com Python e Django framework: Essencial
+    Seção  # Seção 6:Testando seu projeto
+    Aula   # 59. Entendendo e configurando os testes
+    Minuto # 08:27
+    """
+
+# Exemplo de um teste comum, que não envolve módulos Django
+"pythton manage.py test"  # comando para executar testes comuns
 def teste_regular():
     """
     from django.test import TestCase
@@ -87,6 +96,8 @@ def terminal2():
     """
 
 # todo ETAPA DE TESTES
+"raiz/pa/tests.py"      # módulo padrão para testes (não recomendável)
+"O que é recomendável"  # criar na raiz do projeto, um pacote chamado: tests
 
 def terminal3():
     """
@@ -95,13 +106,13 @@ def terminal3():
     pip freeze > requirements.txt
     """
 
-"test_models.py"  # módulo usado como teste, mas não deve ser apenas este a ser testado
-def tests():
+"test_models.py"  # módulo criado no pacote: tests
+def pa_tests():
     """
     1. raiz / pa / new / python package / tests
     2. tests / new / python file / test_models
 
-    OUTROS MÓDULOS:
+    OUTROS MÓDULOS QUE SÃO TESTÁVEIS:
         tests / new / python file / test_forms
         tests / new / python file / test_views
     """

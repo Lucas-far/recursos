@@ -1,6 +1,8 @@
 
 
 """
+Módulo >>> request.py
+
 Objetivo:
          exibir dados de usuário no template, ou para condições no módulo [ views.py ]
 """

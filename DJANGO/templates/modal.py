@@ -1,6 +1,8 @@
 
 
 """
+Módulo >>> modal.py
+
 Objetivo:
          construir um botão modal para exibir dados aninhado à uma página
 """

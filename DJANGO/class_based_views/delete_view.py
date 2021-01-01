@@ -1,8 +1,8 @@
 
 
-
-
 """
+Módulo: delete_view.py
+
 Objetivo:
          template usado parar deletar um objeto já criado, de um bdd
 """
