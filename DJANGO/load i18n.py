@@ -2,8 +2,10 @@
 
 """
 Módulo >>> load i18n.py
+
+Objetivo:
+         usar ferramentas de tradução para um projeto Django
 """
-# TODO -> Configurar {% load i18n %}
 
 def fonte():
     """
@@ -14,7 +16,7 @@ def fonte():
 
 def terminal():
     """
-    1. pip install django==2.2.9
+    1. pip install django==2.2.17
     2. pip install django-bootstrap4
     3. pip freeze > requirements.txt
     4. django-admin startproject pp .
@@ -33,8 +35,6 @@ def settings():
 
 def raiz():
     """ raiz/new/directory/locale """
-
-"OBS: No módulo views, a tradução ocorre em variáveis string passadas em contexto, envoltas ao método _()"
 
 # IndexTemplateView / index.html
 def views():
@@ -108,10 +108,10 @@ def pa_urls():
 
 # TODO -> Configuração aparte ===================================================================================== FIM
 
-"OBS: No template, textos em tag são traduzidos pela sintaxe {% trans '' %}"
-"OBS: No template, variáveis de contexto são traduzidas, caso tenham sido _() dentro da view"
-"OBS: Não deve-se esquecer também de usar a sintaxe {% load i18n %}"
-"OBS: Os módulos editáveis principais: [ forms ] [ models ] [ templates ] [ views ]"
+"OBS"  # Todos os módulos a receberem tradução, devem conter: [ from django.utils.translation import gettext as _ ]
+"OBS"  # Módulos normalmente editáveis: [ templates ] [ forms.py ] [ models.py ] [ views.py ]"
+"OBS"  # No template, tradução de tags: {% trans '' %}
+"OBS"  # No template: {% load i18n %}"
 
 # index.html
 def templates():
