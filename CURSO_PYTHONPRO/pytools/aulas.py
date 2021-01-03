@@ -1,8 +1,16 @@
 
 
-""""""
-# todo CURSO: Pytools / AULA: Criação de Repositório
-def criar_repositorio():
+"""
+Módulo >>> aulas.py
+
+Objetivo:
+         transcrever aulas do curso e sintetizar coisas relevantes
+"""
+
+#######################################################################################################################
+"Pytools - Criação de Repositório"
+#######################################################################################################################
+def script():
     """
     1. https://github.com/
     2. +                  || canto superior direito da tela, próximo ao avatar
@@ -20,115 +28,114 @@ def criar_repositorio():
 
 
 
-# todo CURSO: Pytools / AULA: Chaves SSH
-"TERMINAL - ao executar, cria-se um dir em /home/user/, por padrão, com o nome do próprio repositório"
+#######################################################################################################################
+"Pytools - Chaves SSH"
+#######################################################################################################################
+"5"  # ao executar, cria-se um dir em /home/user/nome_do_rep"
 def git_clonar():
     """
-    1. Uma vez criado um repositório, este passa a ter um link: (https) ou (ssh)
-    2. No segundo caso, é preciso criar uma chave (explicado posteriormente)
-    3. O link de acesso encontra-se no botão (code)
-    4. Copia-se esse link
-    5. TERMINAL -> [ git clone link html ou ssh ] ou [ git clone link html ou ssh nome do rep. ]
+    1 - Uma vez criado um repositório, este passa a ter um link: (https) ou (ssh)
+    2 - No segundo caso, é preciso criar uma chave (explicado posteriormente)
+    3 - O link de acesso encontra-se no botão (code)
+    4 - Copia-se esse link
+    5 - [ OPÇÃO 1 ] git clone link html ou ssh
+    5 - [ OPÇÃO 2 ] git clone link html ou ssh nome do rep.
     """
 
-"TERMINAL - ao executar, se for a 1a vez, será requisitado um login"
+"1"  # Ao executar, se for a primeira vez, será requisitado o login da sua conta GitHub
 def git_logar():
     """
-    1. TERMINAL: [ git push ] ou [ git push origin master ]
-    2. Entra-se com os dados da sua conta Github
+    1 - [ OPÇÃO 1 ] git push
+    1 - [ OPÇÃO 2 ] git push origin master
+    2 - Fornecer dados da sua conta Github
     """
 
-"TERMINAL - a fim de tornar o comando de push independente de passar a senha em loop, cria-se uma chave SSH"
+"OBS"  # Essa etapa é feita para gerar no seu OS, um dir que contém sua chave SSH, para poder usá-la na sua conta GitHub
+"OBS"  # A intenção de usar uma chave SSH, é para evitar requisições repetitivas de senha ao fazer commit
 def git_gerar_ssh():
     """
-    1. TERMINAL: [ ssh-keygen -t rsa ] (Linux) [ ssh-keygen.exe -t rsa ] (Windows)
-    2. Uma rota padrão é sugerida, para inserir os diretórios e módulos onde chaves (privada) & (pública) serão salvas
-    3. Apertar ENTER
-    4. Em seguida, será requisitado uma passphrase, que é uma senha, e é reincidente
+    1 - [ Ubuntu  ] ssh-keygen -t rsa
+    1 - [ Windows ] ssh-keygen.exe -t rsa
+    2 - Apertar ENTER
+    3 - Em seguida, será requisitado uma passphrase
 
        EXEMPLO:
                umafrasepodevalermuitacoisamasaomesmotempopodenaovalernada
 
-    4. Apertar ENTER
-    5. Serão criados: (public key) (key fingerprint = SHA256) (key's randomart)
-    6. Dirija-se ao seu avatar no site do Github (canto superior direito da tela)
-    6. Dropdown (Settings)
-    7. Selecionar: (SSH and GPG keys)
-    8. Selecionar: (New ssh key)
-    9. Na página de criação da chave, temos: (title) (key)
-    10. Duas formas de acessar a chave:
+    4 - Apertar ENTER
+    5 - Serão criados: (public key) (key fingerprint = SHA256) (key's randomart)
+    6 - Acessar seu avatar no site do Github (canto superior direito da tela)
+    7 - Dropdown (Settings)
+    8 - Botão (SSH and GPG keys)
+    9 - Botão (New ssh key)
+    10 - Na página de criação da chave, temos: (title) (key)
+    11 - Ir para: [ /home/seu_user/.ssh ]
+    12 - Procurar: [ cat id_rsa.pub ]
+    13 - Abrir e copiar a chave
 
-        FORMA 1:
-                cd .ssh -> cat id_rsa.pub -> ctrl + c -> voltar à página de criação da chave ssh -> ctrl + v
-        FORMA 2:
-                ir manualmente ao dir, e copiar manualmente
+    VIA TERMINAL:
+                 11 até 13 - cd /home/seu_user/.ssh >>> cat id_rsa.pub >>> copiar retorno
 
-    11. Clicar: (Add ssh key)
-    12. A partir desse momento, você poderá clonar repositórios pelo (ssh) [ ver def git_clonar() ]
+    14 - Retornar à página de criação da chave SSH
+    15 - Colar a chave copiada no campo: [ key ]
+    16 - Salvar
+    17 - Agora, você estará apto a clonar repositórios por sua chave SSH [ ver def git_clonar() ]
     """
 
 
 
 
 
-# todo CURSO: Pytools / AULA: Fork
-"Há diferença entre CLONE e FORK?"  # sim
+#######################################################################################################################
+"Pytools - Fork"
+#######################################################################################################################
+"1"  # Há diferença entre CLONE e FORK?
+"2"  # O que seria CLONE?
+"3"  # O que seria FORK?
+"4"  # Como FORK conecta-se com o projeto original?
+"5"  # Como CLONE conecta-se com o projeto original?
+"6"  # Há algum padrão envolvendo CLONE e FORK?
 
-"O que seria CLONE?"
-# Copiar um projeto de um repositório, para enviá-lo para sua máquina, sem gerar uma cópia na sua conta Github
-
-"O que seria FORK?"
-# Copiar um projeto de um repositório como um repositório novo na sua conta Github
-
-"Como FORK conecta-se com o projeto original?"
-# Através de um PULL REQUEST, que é enviado ao autor original, e avaliado se a mudança será efetuada
-
-"Como CLONE conecta-se com o projeto original?"
-# Se você possui a chave de acesso (SSH), a mudança feita por você, já acontece através do PUSH
-
-"Há algum padrão envolvendo CLONE e FORK?"
-# Se for um repositório estrangeiro, primeiro executa-se FORK, depois CLONE (html) ou (ssh). Pycharm [ get from VCS ]
-
+"1"  # sim
+"2"  # Copiar um projeto de um repositório, para enviá-lo para sua máquina, sem gerar uma cópia na sua conta Github
+"3"  # Copiar um projeto de um repositório como um repositório novo na sua conta Github
+"4"  # Através de um PULL REQUEST, que é enviado ao autor original, e avaliado se a mudança será efetuada
+"5"  # Se você possui a chave SSH do repositório do projeto, a mudança já acontece através do COMMIT/PUSH
+"6"  # Se for um repositório alheio, primeiro executa-se FORK, depois CLONE (html) ou (ssh). Pycharm [ get from VCS ]
 
 
-# todo CURSO: Pytools / AULA: Pull Request Não Aceito
+
+
+
+#######################################################################################################################
+"Pytools - Pull Request Não Aceito"
+#######################################################################################################################
 def linguagem_markdown():
     """
     1. Adicionar título para link: [título]
     2. Adicionar o link: (link)
     """
 
+# Menu no GitHub para registrar possíveis erros em um projeto, normalmente quando há um grupo de pessoas envolvidas
 def github_menu_issues():
     """
-    Objetivo:
-             criar tópicos, no Github, para informar sobre problemas
-    OBS:
-        1. cada issue possui sua id, e esta pode ser inserida na mensagem do commit, pela sintaxe: [ close #id ]
-        2. ao executar o COMMIT/PUSH, requisita-se uma PULL REQUEST
-        3. na tela do PULL REQUEST, pode-se mencionar a sintaxe [ close #id ]
+    1 - Ao acessar a página de issues, e posta-se uma, esta gera um id
+    2 - Esse id especificado, pode ser mencionado em IDE's (contexto: Pycharm)
+    3 - No console do commit, o id da issue é chamada pela sintaxe: [ close #id ]
+    4 - Após o COMMIT/PUSH, requisita-se uma PULL REQUEST no GitHub
+    5 - No post do PULL REQUEST, pode-se mencionar a sintaxe novamente: [ close #id ]
     """
 
 
 
 
 
-# todo CURSO: Pytools / AULA: Feature Branch
-def branch_conceito():
-    """ Ramos de códigos distintos a partir de um ponto no seu histórico """
-
-def branch_tipos():
-    """
-    Ramo local  (local branch)  -> ramo interno ao seu projeto
-    Ramo remoto (remote branch) -> ramo externo ao seu projeto
-    """
-
-def branch_pycharm():
-    """
-    Representação         || galhos com pontos nas extremidades
-    Localização           || canto inferior direito da tela da IDE
-    Nome da branch local  || master ou origin/master
-    Nome da branch remota || origin/master
-    """
+#######################################################################################################################
+"Pytools - Feature Branch"
+#######################################################################################################################
+"Breach"  # Ramos de códigos distintos a partir de um ponto no seu histórico
+"Tipos"   # LOCAL BRANCH (projeto) (master ou origin/master) / REMOTE BRANCH (GitHub) (origin/master)
+"Acesso"  # No Pycharm: [ Git / Branches... ] ou canto inferior direito da tela da IDE
 
 def branch_comandos():
     """
@@ -145,21 +152,70 @@ def branch_comandos():
 
 def branch_comandos_executados():
     """
-    conectar um repositório remoto (Pycharm)                            [ menu=git / opção=manage remotes ]
-    atualizar todas as branches remotas de todos rep. remotos (Pycharm) [ menu=git / opção=fetch ]
-    criar uma branch local (Pycharm)                                    [ canto inferior direito / + new branch ]
-    verificar logs de braches feitas                                    [ canto inferior esquerdo / git / log ]
+    [ Git / Manage Remotes... ]          # conectar um repositório remoto (Pycharm)
+    [ Git / Fetch ]                      # atualizar todas as branches remotas de todos rep. remotos (Pycharm)
+    [ Git / Branches... / + New branch ] # criar uma branch local (Pycharm)
+    [ Git / Show Git Log ]               # verificar logs de braches feitas
     """
 
 
 
 
 
-# todo CURSO: Pytools / AULA: Arquivo Gitignore
+#######################################################################################################################
+"Pytools - Arquivo Gitignore"
+#######################################################################################################################
 def criar_modulo():
     """
-    Local           || /home/user/
-    Nome            || .gitignore_global
-    Conteúdo ('\n') || .idea/ bin/ *.sqlite3
-    TERMINAL        || git config --global core.excludesfile ~/.gitignore_global
+    1 - Ir a rota:    [ /home/user/ ]
+    2 - Criar módulo: [ .gitignore_global ]
+    3 - No módulo:
+                  .idea/
+                  bin/
+                  *.sqlite3
+    4 - No terminal:
+                    git config --global core.excludesfile ~/.gitignore_global
+    """
+
+
+
+
+
+#######################################################################################################################
+"Pytools - Pyenv no Ubuntu"
+#######################################################################################################################
+"Sobre"  # Comandos relevantes para ter uma configuração completa para Python no OS Ubuntu
+def terminal():
+    """
+    sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm gettext libncurses5-dev tk-dev tcl-dev blt-dev libgdbm-dev git python-dev python3-dev aria2 vim libnss3-tools python3-venv liblzma-dev
+    """
+
+def instalar_pyenv():
+    """
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    """
+
+"Bashrc"  # Configurar binários do Pyenv para ele ser reconhecido pelo OS no terminal
+def bashrc():
+    """
+    1 - Ir à rota: [ /home/seu_user/.bashrc ]
+    2 - Abrir o módulo
+    3 - Inserir no final do módulo:
+                                   export PATH="/home/lucas/.pyenv/bin:$PATH"
+                                   eval "$(pyenv init -)"
+                                   eval "$(pyenv virtualenv-init -)"
+    4 - Salvar
+    5 - Fechar o terminal
+    6 - Reabrir o terminal
+    7 - pyenv
+    8 - Se a instalação teve êxito, o Pyenv será chamado no terminal
+    """
+
+def atualizar():
+    """
+    1 - pyenv install -l
+    2 - Procurar na listagem, a versão inteiramente numérica mais atual
+        EXEMPLO:
+                3.9.1
+    2 - pyenv install 3.9.1
     """
