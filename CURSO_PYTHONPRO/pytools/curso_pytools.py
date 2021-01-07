@@ -1,10 +1,7 @@
 
 
 """
-Módulo >>> aulas.py
-
-Objetivo:
-         transcrever aulas do curso e sintetizar coisas relevantes
+Módulo || curso_pytools.py
 """
 
 #######################################################################################################################
@@ -182,14 +179,15 @@ def criar_modulo():
 
 
 #######################################################################################################################
-"Pytools - Pyenv no Ubuntu"
+"Pytools"  # Pyenv no Ubuntu
 #######################################################################################################################
-"Sobre"  # Comandos relevantes para ter uma configuração completa para Python no OS Ubuntu
+"Sobre"  # Bibliotecas relevantes para ter uma configuração completa para Python no OS Ubuntu
 def terminal():
     """
     sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm gettext libncurses5-dev tk-dev tcl-dev blt-dev libgdbm-dev git python-dev python3-dev aria2 vim libnss3-tools python3-venv liblzma-dev
     """
 
+"Sobre"  # Pyenv instala Python para sua conta de usuário, sem afetar o Python existente no OS
 def instalar_pyenv():
     """
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
@@ -209,13 +207,32 @@ def bashrc():
     6 - Reabrir o terminal
     7 - pyenv
     8 - Se a instalação teve êxito, o Pyenv será chamado no terminal
-    """
-
-def atualizar():
-    """
-    1 - pyenv install -l
-    2 - Procurar na listagem, a versão inteiramente numérica mais atual
+    9 - pyenv install -l
+    10 - Procurar na listagem, a versão inteiramente numérica mais atual
         EXEMPLO:
                 3.9.1
-    2 - pyenv install 3.9.1
+    11 - pyenv install 3.9.1
     """
+
+
+
+
+
+#######################################################################################################################
+"Pytools"  # Virtualenv
+#######################################################################################################################
+def virtualenv_objetivos():
+    """
+    1 - Criar ambientes virtuais isolados no OS
+    2 - Tratar projetos com versões diferentes do Python
+    3 - Permitir que projetos tenham versões diferentes de library (projetos legado) (versões bem anteriores)
+    """
+
+
+
+
+
+#######################################################################################################################
+"Pytools"  # Flake8
+#######################################################################################################################
+"Sobre"  # /home/lucas/PycharmProjects/recursos/PYTHON/f/falke8.py

@@ -24,3 +24,9 @@
 # scan('conjunto', {'cj'})
 # scan('string', 's')
 # scan('tupla', ('t',))
+
+# i = int('1020', 7)
+# print(i)
+# print(format(i, 'b'))
+
+
