@@ -2,7 +2,9 @@
 
 """
 Objetivo:
-         configurar bdd postgresql para poder usar em projetos Django no OS Ubuntu
+         utilizar bdd postgresql para poder usar em projetos Django no OS Ubuntu
+Palavra chave:
+              instalar postgresql
 """
 
 def fonte():
@@ -18,14 +20,16 @@ def terminal():
     sudo reboot
     """
 
+# https://www.postgresql.org/download/linux/ubuntu/
 def instalar_parte1():
     """
-    Instruções de instalação do site PostgreSQL para Linux [ Ubuntu ]
-        https://www.postgresql.org/download/linux/ubuntu/
+    1 - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+    2 - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+    3 - sudo apt-get update
+    4 - sudo apt-get -y install postgresql-13
 
-    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-    sudo apt-get update
+        COMANDO QUE PODE APARECER DURANTE A INSTALAÇÃO:
+        4.1 - pg_ctlcluster 13 main start
     """
 
 def comandos_condicionais():
@@ -39,7 +43,7 @@ def comandos_condicionais():
 
 def instalar_parte2():
     """
-    sudo apt-get -y install postgresql-12
+    sudo apt-get -y install postgresql-12 (já há a versão 13)
     sudo apt-get -y install pgadmin4
     """
 
@@ -55,7 +59,8 @@ def terminal2():
 # Configurar uma senha para o usuário padrão [ postgres ]
 def terminal3():
     """
-    1. sudo su - postgres
+    1 - sudo su - postgres
+    2 - psql
     2. ALTER user postgres WITH PASSWORD 'senha desejada';
     3. \q
     4. exit
@@ -65,12 +70,12 @@ def terminal3():
 # Configurar um novo usuário, apartir do padrão [ postgres ]
 def terminal4():
     """
-    1. sudo su - postgres
-    2. psql
-    3. CREATE USER nome do usuário novo WITH PASSWORD 'senha desejada';
-    4. ALTER USER nome do usuário novo WITH SUPERUSER;
-    5. \q
-    6. exit
+    1 - sudo su - postgres
+    2 - psql
+    3 - CREATE USER nome do usuário novo WITH PASSWORD 'senha desejada';
+    4 - ALTER USER nome do usuário novo WITH SUPERUSER;
+    5 - \q
+    6 - exit
     """
 
 # Tutorial: como usar PgAdmin4
@@ -101,4 +106,30 @@ def pgadmin4():
                        database
                            database = dê um nome ao bdd
                                save
+    """
+
+# Deletar usuário não postgres
+def tutorial():
+    """
+    1 - sudo su - postgres
+    2 - dropuser nome_do_usuário
+    :return:
+    """
+
+# Deletar postgresql
+def tutorial2():
+    """
+    1 - sudo apt-get --purge remove postgresql
+    2 - dpkg -l | grep postgres
+    3 - sudo apt-get --purge remove
+
+    pgdg-keyring
+    postgresql-12
+    postgresql-13
+    postgresql-client-12
+    postgresql-client-13
+    postgresql-client-common
+    postgresql-common
+
+    4 - sudo apt-get --purge remove postgresql-12 postgresql-13 postgresql-client-12 postgresql-client-13 postgresql-client-common postgresql-common
     """

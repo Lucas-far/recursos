@@ -2,37 +2,57 @@
 
 """
 Objetivo:
-         configurar um bdd postgreSQL dentro de um projeto Django
+         configurar bdd postgreSQL dentro de um projeto Django
+
+Palavra chave:
+              configurar postgresql
 """
 
-def pgadmin4():
-    """
-    1. Abrir o software Pgadmin4
-    2. Logar no usuário não root [ não postgres ]
-
-    3. Pós login:
-       Databases
-           botão direito
-               create
-                   database
-                       name = nome criado terá de ser passado no módulo [ settings.py / DATABASES / NAME ]
-                           save
-    """
+"OBS"  # Por questão pessoal, eu decide que é melhor criar uma conta para cada bdd postgresql criado
+"OBS"  # Portanto, cada projeto que for usado postgresql, é melhor criar uma conta e depois criar o bdd nela
 
 def terminal():
+    """
+    1 - sudo su - postgres
+    2 - psql
+    3 - CREATE USER nome do usuário novo WITH PASSWORD 'senha desejada';
+    4 - ALTER USER nome do usuário novo WITH SUPERUSER;
+    5 - \q
+    6 - exit
+    """
+
+# Criação de um servidor, para depois criar um bdd
+"OBS"  # Por questões pessoais, eu criei um servidor: [ dernutzer1 ] e o bdd terá o mesmo nome [ dernutzer1 ]
+"OBS"  # A intenção disso é manter essa ordem, aumentando apenas o inteiro, a cada novo projeto que use postgresql
+def pgadmin():
+    """
+    1 - Abrir o Pgadmin4
+    2 - Servers - botão direito - create - server - preencher o nome - preencher o username - preencher o password
+    3 - Salvar
+    """
+
+# Criação do bdd dentro do servidor
+def pgadmin_():
+    """
+    1 - Databases - botão direito - create - database - preencher nome
+    2 - Salvar
+    """
+
+def terminal2():
     """
     1. pip install psycopg2-binary
     2. pip freeze > requirements.txt
     """
 
+"OBS"  # NAME USER PASSWORD = servidor / username da conta nova / senha da conta nova
 def settings():
     """
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'nome do bdd no PgAdmin4',
-            'USER': 'lu**a***n',
-            'PASSWORD': 'pa*****t27**',
+            'NAME': 'dernutzer1',
+            'USER': 'dernutzer1',
+            'PASSWORD': 'wirs....bl....n',
             'HOST': 'localhost',
             'PORT': '5432',
         }

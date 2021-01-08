@@ -5,6 +5,9 @@ Módulo >>> template_django_bootstrap.py
 
 Objetivo:
          definir um template padrão configurado com o framework bootstrap, através do Django
+
+Palavra chave:
+              configurar django-bootstrap4
 """
 
 def templates():

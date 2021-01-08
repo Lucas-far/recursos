@@ -5,6 +5,9 @@ Módulo >>> modelo_base.py
 
 Objetivo:
          modelo que serve parar ser herdado, com informações globais, como: de data, tempo e disponibilidade
+
+Palavra chave:
+              configurar Base
 """
 
 "abstract"  # Torna esse modelo indisponível para receber migração, pois isto é desnecessário
