@@ -336,7 +336,7 @@ def parte4():
 
             "OBS"  # sorted está sendo usado para ordenar dados para evitar possíveis irregularidades do projeto ou do website Pyup
 
-            var3 = ['pip uninstall', ]  # lista de índices que receberá pacote desatualziado a ser desinstalado
+            var3 = ['pip uninstall -y', ]  # lista de índices que receberá pacote desatualziado a ser desinstalado
             var4 = ['pip install', ]    # lista de índices que receberá cada pacote atualizado a ser instalado
 
             "Objetivo"  # Se var e var2 são iguais, não há o que atualizar, então apenas imprime-se 'OK' + incremento

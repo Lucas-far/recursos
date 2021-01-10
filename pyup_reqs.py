@@ -11,8 +11,8 @@ def checar_dependencias(dependencia_projeto, dependencia_pyup):
 
     "OBS"  # sorted está sendo usado para ordenar dados para evitar possíveis irregularidades do projeto ou do website Pyup
 
-    var3 = ['pip uninstall', ]  # lista de índices que receberá pacote desatualziado a ser desinstalado
-    var4 = ['pip install', ]    # lista de índices que receberá cada pacote atualizado a ser instalado
+    var3 = ['pip uninstall -y', ]  # lista de índices que receberá pacote desatualziado a ser desinstalado
+    var4 = ['pip install', ]       # lista de índices que receberá cada pacote atualizado a ser instalado
 
     "Objetivo"  # Se var e var2 são iguais, não há o que atualizar, então apenas imprime-se 'OK' + incremento
     "Objetivo"  # Se não, adicionar em var3, o pacote a ser desintalado, e em var4, o pacote a ser instalado + incremento
@@ -37,6 +37,6 @@ def checar_dependencias(dependencia_projeto, dependencia_pyup):
         print(obj, end=' ')  # Depois, copia-se o retorno dessa linha e execute ela no terminal do projeto
 
 checar_dependencias(
-    '/home/lucas/PycharmProjects/recursos/requirements.txt',
-    '/home/lucas/PycharmProjects/recursos/pyup_reqs.txt'
+    '/home/lucas/PycharmProjects/recursos/PYTHON/f/requirements.txt',
+    '/home/lucas/PycharmProjects/recursos/txt.txt'
 )
