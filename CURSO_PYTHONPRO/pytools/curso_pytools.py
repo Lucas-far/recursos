@@ -305,7 +305,11 @@ def parte3():
     """
     1 - Criar um módulo [ requirements.txt ]
     2 - https://pyup.io/account/repos/github/Lucas-far/attempt_api/
-    3 - Copiar segurando (ctrl + botão esquerdo) cada <td></td> que seja do seu interesse
+
+    3 - Copiar segurando (ctrl + botão esquerdo descendo) para selecionar cada <td></td> que seja do seu interesse
+    3 - Copiar segurando (ctrl + botão esquerdo) para selecionar cada <td></td> que seja do seu interesse
+    3 - Não é possível fazer o primeiro 3 duas vezes seguidas, por isso há o segundo 3
+
     4 - Colar dados selecionados no módulo .txt
     5 - Organizar os dados (mesmo layout do módulo requirements.txt de um projeto Django)
     6 - Salvar o módulo

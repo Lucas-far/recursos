@@ -37,6 +37,6 @@ def checar_dependencias(dependencia_projeto, dependencia_pyup):
         print(obj, end=' ')  # Depois, copia-se o retorno dessa linha e execute ela no terminal do projeto
 
 checar_dependencias(
-    '/home/lucas/PycharmProjects/recursos/PYTHON/f/requirements.txt',
-    '/home/lucas/PycharmProjects/recursos/txt.txt'
+    '/home/lucas/PycharmProjects/recursos/requirements.txt',
+    '/home/lucas/PycharmProjects/recursos/pyup.txt'
 )
