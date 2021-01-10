@@ -1,10 +1,12 @@
 
 
 """
-Módulo: update_view.py
+Módulo >>> update_view.py
 
 Objetivo:
          template usado parar editar um objeto já criado, de um bdd
+
+Palavra chave >>> configurar update view
 """
 
 # Configurações iniciais

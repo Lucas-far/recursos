@@ -1,10 +1,12 @@
 
 
 """
-Módulo: create_view.py
+Módulo >>> create_view.py
 
 Objetivo:
          template usado parar criar um objeto de um bdd
+
+Palavra chave >>> configurar create view
 """
 
 # Configurações iniciais

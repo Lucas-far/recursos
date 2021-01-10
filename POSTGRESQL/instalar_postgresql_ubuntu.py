@@ -3,8 +3,8 @@
 """
 Objetivo:
          utilizar bdd postgresql para poder usar em projetos Django no OS Ubuntu
-Palavra chave:
-              instalar postgresql
+
+Palavra chave >>> instalar postgresql
 """
 
 def fonte():

@@ -6,8 +6,7 @@ Módulo >>> template_view.py
 Objetivo:
          exemplificar o funcionamento da cbv TemplateView
 
-Exemplo:
-
+Palavra chave >>> configurar template view
 """
 
 def quando_usar():

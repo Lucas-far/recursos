@@ -4,10 +4,12 @@
 Módulo ### flake8.py
 
 Objetivo:
-         analisar se um código, projeto segue as práticas da pep8 do Python
+         analisar se um código/projeto segue as práticas da pep8 do Python
 
 Instalação:
            pip install flake8
+
+Palavra chave: instalar flake8
 """
 
 def python():

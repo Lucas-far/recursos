@@ -1,5 +1,11 @@
 
 
+"""
+Módulo ### instalar_python_ubuntu.py
+
+Palavra chave: instalar python ubuntu
+"""
+
 # Softwares: 1. Java development kit (oracle) / 2. Python / 3. Pycharm
 def softwares():
     """

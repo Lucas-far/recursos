@@ -4,8 +4,7 @@
 Objetivo:
          configurar bdd postgreSQL dentro de um projeto Django
 
-Palavra chave:
-              configurar postgresql
+Palavra chave >>> configurar postgresql
 """
 
 "OBS"  # Por questão pessoal, eu decide que é melhor criar uma conta para cada bdd postgresql criado

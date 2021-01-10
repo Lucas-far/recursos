@@ -5,6 +5,8 @@ Módulo: gitignore.py
 
 Objetivo:
          ignorar pastas, módulos, que não são realmente úteis para DEPLOY, ou não devem ser vistos
+
+Palavra chave: configurar gitignore
 """
 
 def fonte():
@@ -20,9 +22,9 @@ def raiz():
     raiz / new / file / .gitignore
 
     __pycache__
-    *.*~
-    *.pyc
+    *.*~ (ausente)
+    *.pyc (ausente)
     .env
-    .idea
+    .idea (ausente)
     """
     # Caso queira-se ignorar alguma pasta, usa-se: nome_da_pasta/*

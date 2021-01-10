@@ -1,13 +1,12 @@
 
 
 """
-Módulo: list_view.py
+Módulo >>> list_view.py
 
 Objetivo:
          template usado parar exibir dados de bdd, seja ou não, em forma de tabela
 
-Palavra chave:
-              configurar list view
+Palavra chave >>> configurar list view
 """
 
 # Configurações iniciais
