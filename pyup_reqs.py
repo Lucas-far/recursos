@@ -37,9 +37,6 @@ def checar_dependencias(dependencia_projeto, dependencia_pyup):
         print(obj, end=' ')  # Depois, copia-se o retorno dessa linha e execute ela no terminal do projeto
 
 checar_dependencias(
-    '/home/lucas/PycharmProjects/recursos/PYTHON/POO/requirements.txt',
+    '/home/lucas/PycharmProjects/recursos/requirements.txt',
     '/home/lucas/PycharmProjects/recursos/pyup_reqs.txt'
 )
-
-# pip uninstall typed-ast==1.4.1 soupsieve==2.0.1 pytz==2020.4 pytube==10.0.0 pynput==1.7.1 pyinstaller-hooks-contrib==2020.10 image==1.5.33 Pillow==8.0.1 Django==3.1.3
-# pip install typed-ast==1.4.2 soupsieve==2.1 pytz==2020.5 pytube==10.4.1 pynput==1.7.2 pyinstaller-hooks-contrib==2020.11 image==1.5.32 Pillow==8.1.0 Django==3.1.5
