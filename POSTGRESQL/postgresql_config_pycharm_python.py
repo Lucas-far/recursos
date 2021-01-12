@@ -1,15 +1,17 @@
 
 
 """
+Módulo: postgresql_config_pycharm_python.py
+
 Objetivo:
          configurar bdd postgreSQL dentro de um projeto Django
 
 Palavra chave >>> configurar postgresql
 """
 
-"OBS"  # Por questão pessoal, eu decide que é melhor criar uma conta para cada bdd postgresql criado
-"OBS"  # Portanto, cada projeto que for usado postgresql, é melhor criar uma conta e depois criar o bdd nela
-
+"Título"  # Criação de um usuário novo
+"OBS"     # Por questão pessoal, eu decide que é melhor criar uma conta para cada bdd postgresql criado
+"OBS"     # Portanto, cada projeto que for usado postgresql, é melhor criar uma conta e depois criar o bdd nela
 def terminal():
     """
     1 - sudo su - postgres
@@ -20,9 +22,9 @@ def terminal():
     6 - exit
     """
 
-# Criação de um servidor, para depois criar um bdd
-"OBS"  # Por questões pessoais, eu criei um servidor: [ dernutzer1 ] e o bdd terá o mesmo nome [ dernutzer1 ]
-"OBS"  # A intenção disso é manter essa ordem, aumentando apenas o inteiro, a cada novo projeto que use postgresql
+"Título"  # Criação de um servidor
+"OBS"     # Por questões pessoais, eu criei um servidor: [ dernutzer1 ]
+"OBS"     # A intenção disso é manter essa ordem, aumentando apenas o inteiro, a cada novo projeto que use postgresql
 def pgadmin():
     """
     1 - Abrir o Pgadmin4
@@ -30,7 +32,7 @@ def pgadmin():
     3 - Salvar
     """
 
-# Criação do bdd dentro do servidor
+"Título"  # Criação de um bdd
 def pgadmin_():
     """
     1 - Databases - botão direito - create - database - preencher nome
