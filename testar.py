@@ -32,3 +32,7 @@
 
 # find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 # find . -path "*/migrations/*.pyc"  -delete
+
+valor = float(input('Valor -> '))
+print(valor * (93/100))
+# Diederdas0727
