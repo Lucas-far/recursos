@@ -6,3 +6,4 @@ fork.py
 pull_request.py
 pull_request_nao_aceito.py
 feature_branch.py
+arquivo_gitignore.py
