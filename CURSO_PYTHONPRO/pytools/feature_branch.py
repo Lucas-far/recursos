@@ -43,28 +43,80 @@ def parte1():
 "upstream"                # nome do repositório original
 
 # Ações feitas na aula
-"1"   # Foi feito 1 fork em aulas passadas, do repositório [ pythonpro / libpythonpro ] para [ renzon / libpythonpro ]
-"2"   # Depois desse fork, foi feito uma clonagem, para poder usar o projeto numa IDE
-"3"   # Mas, nessa aula o procedimento de clonagem repete-se, copiando o link SSH
-"4"   # A intenção agora é clonar o repositório remotamente (eu achei confuso)
-"5"   # COMANDO: git remote add apelido link SSH (CLONAR)
-"6"   # COMANDO: git remote -v                   (LISTAR)
-"7"   # COMANDO: git fetch -all                  (ATUALIZAR)
-"8"   # Como resultado, uma nova BRANCH REMOTA surge, com o nome do apelido
-"9"   # Depois, na BRANCH LOCAL, foi criado uma BRANCH NOVA pela opção [ + new branch ]
-"10"  # Aparentemente, quando se faz isso, nada na tela é alterado, mas você está logado nessa BRANCH nova criada
-"11"  # Após, é feito uma alteração qualquer no projeto, e então verifica-se [ menu -> git -> show git log ]
-"12"  # Pela teoria, ações dessa BRANCH LOCAL criada, aparecem nesse log
-"13"  # Voltando ao 10, acessando as BRANCHES novamente, é possível fazer migração entre as BRANCHES existentes
-"14"  # Deslogando da BRANCH LOCAL: [ Menu -> git -> branches -> remote branches -> nome -> seta -> checkout ]
-"15"  # A tela sofre uma alteração
-"16"  # Depois é deletada a BRANCH LOCAL (essa opção talvez esteja disponível somente quando há + de 1 BRANCH LOCAL)
-"17"  # Deletar BRANCH LOCAL [ Menu -> git -> branches -> local branches -> nome -> seta -> delete ]
-"18"  # Pelo que foi entendido, repositórios remotos = BRANCH REMOTA
-"19"  # Esses repositórios remotos, em trabalhos de equipe, normalmente recebem PULL REQUESTS
-"20"  # Em 5 foi criado o repositório remoto, e agora ele irá tornar-se o local
-"21"  # [ Git -> branches -> remote branches -> nome -> seta -> checkout as new local brench ]
-"22"  # É executado um COMMIT/PUSH
+
+""  # Foi feito 1 fork em aulas passadas, do repositório [ pythonpro / libpythonpro ] para [ renzon / libpythonpro ]
+""  # Depois desse fork, foi feito uma clonagem, para poder usar o projeto numa IDE
+""  # Mas, nessa aula o procedimento de clonagem repete-se, copiando o link SSH
+""  # A intenção agora é clonar o repositório remotamente
+
+"1"   # git remote add apelido link SSH (CLONAR)
+"2"   # git remote -v                   (LISTAR)
+"3"   # git fetch -all                  (ATUALIZAR)
+"4"   # Os códigos criam um REMOTE BRANCH de apelido [ upstream ]
+
+""  # [ menu -> git -> branches -> + new branch ] criação de um branch [ ramo ]
+""  # Aparentemente, [ menu -> git -> branches -> + new branch ] é usada para criar BRANCH LOCAL apenas
+""  # Ao criar o BRANCH LOCAL, a tela não muda, mas esse BRANCH loga no projeto, sobescrevendo o BRANCH LOCAL [ master ]
+""  # Alteração em algo no projeto
+""  # [ menu -> git -> show git log ] para verificar se a modificação é exibida no log
+
+""  # No momento o BRANCH logado é [ ramo ]
+""  # Migração entre BRANCHES existentes
+""  # [ Menu -> git -> branches -> local branches -> master -> seta -> checkout ] para migrar ao BRANCH local [ master ]
+""  # Diferente do logar em um BRANCH criado, o migrar causa alteração na tela
+""  # [ Menu -> git -> branches -> local branches -> ramo -> seta -> checkout ] Ativando BRANCH LOCAL [ ramo ]
+""  # [ Menu -> git -> branches -> local branches -> master -> seta -> delete ] Deletado BRANCH LOCAL [ master ]
+""  # No momento há somente um BRANCH LOCAL [ ramo ]
+
+""  # BRANCH REMOTOS, normalmente são criados em trabalhos de equipe, para recebem PULL REQUESTS
+""  # Anteriormente, foi criado um BRANCH REMOTO [ upstream ], e este pode criar um novo BRANCH LOCAL
+""  # [ Git -> branches -> remote branches -> upstream -> seta -> checkout as new local brench ] com nome [ master ]
+""  # Nesse momento, volta-se a ter dois BRANCH LOCAIS [ ramo ] [ master = criado do BRANCH REMOTO = upstream ]
+""  # COMMIT/PUSH (o painel de PUSH precisa ser modificado)
+""  # No painel de PUSH, há um link, normalmente configurado ao nome do BRANCH LOCAL padrão [ master ]
+""  # No painel de PUSH, modificar esse link para [ origin ]
+""  # PUSH
+""  # Segundo o instrutor, a intenção disso é sincronizar a BRANCH REMOTA com a LOCAL
+
+"Resumo atual"  # BRANCH REMOTA [ upstream ] criou BRANCH LOCAL [ master ] + COMMIT/PUSH + link = origin + PUSH
+
+""  # Não fica claro se os procedimentos anteriores são mandatórios para que o resto possa ser feito
+""  # Tomando por base que "sim", agora, para cada nova alteração, cria-se um novo BRANCH LOCAL
+""  # [ menu -> git -> branches -> + new branch ] que no contexto, recebe o nome [ 4 ]
+""  # Mesma lógica citada anteriormente: ao criar um BRANCH LOCAL novo, este é ativado, sobescrevendo o antigo ativado
+""  # Portanto, mudanças posteriores, acontecem nesse BRANCH LOCAL nomeado [ 4 ]
+""  # Alteração em algo do projeto
+""  # COMMIT/PUSH (mensagem do commit com a sintaxe close #4)
+
+# todo -> Parada em 09:00
+
+""  # No repositório matriz [ pythonpro / libpythonpro ], surge uma mensagem informando o BRANCH que recebeu PUSH
+""  # Há um botão dropdown com um símbolo de BRANCH, que mostra os BRANCHES ativos (não foi alterado)
+"29"  # [ Compare and pull request ] deve carregar a página, com o conteúdo do último COMMIT nela
+"30"  # [ create pull request ] para validar o PULL REQUEST
+"31"  # Caso o PULL REQUEST fosse negado, foram feitos os seguintes procedimentos
+
+#  transcrição de uma mensagem não entendida com clareza
+def mensagem2():
+    """
+    FALHA EM PULL REQUEST
+    A ideia do feature branch é que a branch master, ela sempre fica sincronizada com o upstream para você não ter o
+    trabalho de reverter código toda hora
+
+    "32"  # [ Menu -> git -> branches -> local branches -> master -> seta -> checkout ]
+    "33"  # [ Menu -> git -> branches -> local branches -> apelido -> seta -> delete ]
+
+    SUCESSO EM PULL REQUEST
+    1 - O código será integrado ao repositório original/matriz
+
+    "34"  # [ Rebase and merge ] [ Confirm rebase and merge ]
+    "35"  # [ Menu -> git -> branches -> local branches -> apelido -> seta -> delete -> delete tracked branch ]
+    """
+
+"36"  # [ git fetch apelido ] para atualizar ações ocorrentes na branch apelido/upstream
+"37"  # [ menu -> git -> branches -> local branches -> apelido -> seta -> merge ] (Fundir branch upstream e master)
+"38"  # COMMIT/PUSH
+"39"  # Recomendação de efetuar sempre que possível [ git fetch ] para manter o código atualizado
 
 "Título"  # Comando relacionados a branch pelas ferramentas da IDE (Pycharm) no projeto
 def parte2():
