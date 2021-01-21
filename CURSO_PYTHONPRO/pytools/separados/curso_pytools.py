@@ -4,44 +4,6 @@
 Módulo || curso_pytools.py
 """
 
-############################
-"Pytools"  # Pyenv no Ubuntu
-############################
-
-"Título"  # Bibliotecas relevantes para ter uma configuração completa para Python no OS Ubuntu
-def parte1():
-    """
-    sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm gettext libncurses5-dev tk-dev tcl-dev blt-dev libgdbm-dev git python-dev python3-dev aria2 vim libnss3-tools python3-venv liblzma-dev
-    """
-
-"Título"  # Instalação do Pyenv
-"OBS"     # Pyenv instala Python no OS, sem afetar o Python existente no OS
-def parte2():
-    """
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    """
-
-"Título"  # Configuração dos binários do Pyenv
-def parte3():
-    """
-    1 - Ir à rota: [ /home/seu_user/.bashrc ]
-    2 - Abrir o módulo
-    3 - Inserir no final do módulo:
-                                   export PATH="/home/lucas/.pyenv/bin:$PATH"
-                                   eval "$(pyenv init -)"
-                                   eval "$(pyenv virtualenv-init -)"
-    4 - Salvar
-    5 - Fechar o terminal
-    6 - Reabrir o terminal
-    7 - pyenv
-    8 - Se a instalação teve êxito, o Pyenv será chamado no terminal
-    9 - pyenv install -l
-    10 - Procurar na listagem, a versão inteiramente numérica mais atual
-        EXEMPLO:
-                3.9.1
-    11 - pyenv install 3.9.1
-    """
-
 #######################
 "Pytools"  # Virtualenv
 #######################

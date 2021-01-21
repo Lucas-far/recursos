@@ -29,6 +29,5 @@
 # print(i)
 # print(format(i, 'b'))
 
-valor = float(input('Valor -> '))
-print(valor * (93/100))
-# Diederdas0727
+# valor = float(input('Valor -> '))
+# print(valor * (93/100))

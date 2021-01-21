@@ -2,6 +2,7 @@
 
 """
 Módulo: arquivo_gitignore.py
+Palavra chave: gitignore global
 
 Aula          || Arquivo Gitignore
 Palavra_chave || tutorial gitignore
