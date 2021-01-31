@@ -1,7 +1,7 @@
 
 
 """
-Último acesso: PYTHON/d/DictWriter.py
+
 """
 
 from random import choice

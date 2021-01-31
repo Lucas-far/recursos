@@ -75,7 +75,6 @@ def parte4():
     1 - git remote add apelido link SSH (CLONAR)
     2 - git remote -v                   (LISTAR)
     3 - git fetch -all                  (ATUALIZAR)
-    4 - Os códigos criam um REMOTE BRANCH de apelido [ upstream ]
     """
 
 # Criação de BRANCH LOCAL de nome: ramo

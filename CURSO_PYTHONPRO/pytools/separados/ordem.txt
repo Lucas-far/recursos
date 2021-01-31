@@ -6,3 +6,4 @@ pull_request_nao_aceito.py
 feature_branch.py
 arquivo_gitignore.py
 pyenv_no_ubuntu.py
+virtualenv.py

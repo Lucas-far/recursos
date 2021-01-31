@@ -31,3 +31,8 @@
 
 # valor = float(input('Valor -> '))
 # print(valor * (93/100))
+
+from sys import getsizeof as _
+var = [*range(0, 24)]
+var2 = (list(range(0, 24)))
+print(_(var), _(var2))

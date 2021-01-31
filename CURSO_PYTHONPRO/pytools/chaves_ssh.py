@@ -28,29 +28,33 @@ def parte2():
     1 - git init
     2 - git status
     3 - git add .
-    4 - git commit -m 'Mensagem obtigatória'
+    4 - git commit -m 'Mensagem obrigatória'
     5 - git push
     """
 
 # Criar no OS, sua chave SSH pessoal, para usar no GitHub
 def parte3():
     """
-    1 - [ Ubuntu  ] ssh-keygen -t rsa / [ Windows ] ssh-keygen.exe -t rsa
+    1 - [ Ubuntu  ] ssh-keygen -t rsa
+    1 - [ Windows ] ssh-keygen.exe -t rsa
+
+    -------------------------------------------------------------------------------------------------------------------
+    OBS: Em 1, eu creio que após "rsa", pode usar [ 'seu_email_github' ], mas não estou certo
+    -------------------------------------------------------------------------------------------------------------------
+
     2 - Digitar uma passphrase
 
        EXEMPLO: umafrasepodevalermuitacoisamasaomesmotempopodenaovalernada
 
-       OBS: Um diretório é criado em [ /home/seu_user/.ssh ]
+    --------------------------------------------------------------------------------------------------------------------
+    OBS: Um diretório é criado em: [ /home/seu_user/.ssh ]
+    --------------------------------------------------------------------------------------------------------------------
 
-    3 - Serão criados: [ public key ] + [ key fingerprint = SHA256 ] + [ key's randomart ]
-    4 - Acessar seu avatar e clicar na opção [ Settings ] + [ SSH and GPG keys ] + [ New ssh key ]
-    5 - Ir ao diretório [ /home/seu_user/.ssh ], procurar por [ cat id_rsa.pub ] e copiar o conteúdo
-
-        PROCEDIMENTO VIA TERMINAL:
-                                  1 - cd /home/seu_user/.ssh
-                                  2 - cat id_rsa.pub
-                                  3 - ctrl + c
-
-    6 - Voltar ao GitHub, colar o conteúdo copiado no campo [ key ] e dar um título à sua chave no campo [ title ]
-    7 - Salvar
+    3 - Serão criados: [ public key / key fingerprint = SHA256 / key's randomart ]
+    4 - Ir ao diretório [ /home/seu_user/.ssh ], procurar por [ cat id_rsa.pub ], abrir e [ ctrl + c ]
+    5 - Ir ao site do Github
+    6 - Fazer o caminho: [ Avatar / Settings / SSH and GPG keys / New ssh key ]
+    7 - No campo [ title ], dar o nome desejado à chave
+    8 - No campo [ key ], [ ctrl + v ]
+    9 - Salvar
     """

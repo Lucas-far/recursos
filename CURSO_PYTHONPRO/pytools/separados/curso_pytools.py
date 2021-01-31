@@ -6,20 +6,8 @@ Módulo || curso_pytools.py
 
 #######################
 "Pytools"  # Virtualenv
+"Pytools"  # Flake8 /home/lucas/PycharmProjects/python/flake8
 #######################
-
-"Título"  # Objetivos para instalar o virtualenv para o Python
-def parte1():
-    """
-    1 - Criar ambientes virtuais isolados no OS
-    2 - Tratar projetos com versões diferentes do Python
-    3 - Permitir que projetos tenham versões diferentes de library (projetos legado) (versões bem anteriores)
-    """
-
-###################
-"Pytools"  # Flake8
-###################
-"FONTE"  # /home/lucas/PycharmProjects/recursos/PYTHON/f/flake8.py
 
 ##############################################
 "Pytools"  # Integração Contínua com Travis CI
