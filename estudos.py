@@ -4,13 +4,15 @@
 
 """
 
-from random import choice
+from random import shuffle
 
 def escolher_video():
     """"""
     # 'neuralnine', 'online tutorials' 'python pro django'
-    escolha = choice(['python pro pytools', 'udemy bdd', 'udemy js', 'udemy python'])
+    escolha = ['python', 'python pro pytools', 'udemy bdd', 'udemy js', 'udemy python']
+    shuffle(escolha)
     return escolha
 
 if __name__ == '__main__':
-    print(escolher_video())
+    print(var := escolher_video())
+    # ['udemy js', 'udemy python', 'udemy bdd', 'python', 'python pro pytools']

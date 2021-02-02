@@ -7,3 +7,5 @@ feature_branch.py
 arquivo_gitignore.py
 pyenv_no_ubuntu.py
 virtualenv.py
+integracao_continua_com_travis_CI.py
+
