@@ -15,4 +15,5 @@ def escolher_video():
 
 if __name__ == '__main__':
     print(var := escolher_video())
-    # ['udemy js', 'udemy python', 'udemy bdd', 'python', 'python pro pytools']
+    # ['udemy js', 'udemy python', 'udemy bdd', 'python', 'python pro pytools'] segunda
+    # ['udemy python', 'python pro pytools', 'udemy js', 'udemy bdd', 'python'] terça
