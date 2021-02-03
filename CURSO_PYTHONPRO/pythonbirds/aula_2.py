@@ -1,6 +1,0 @@
-
-
-"""
-Nome da aula: Motivação
-"""
-
