@@ -5,19 +5,20 @@ Módulo: arquivo_setup.py
 Aula: Arquivo Setup.py
 """
 
-"OBS"   # Não entendo o propósito disso
+"OBS"  # Não entendo o propósito disso
+"OBS"  # Arquivo criado como [ setup.py ] na raiz de um projeto seu (no meu caso, Django)
 
 # Modelo de um setup
-def parte1():
+def parte_1():
     """
     1 - https://github.com/pythonprobr/libpythonpro/blob/master/setup.py
-    2 - copiar modelo
+    2 - copiar o conteúdo do arquivo [ setup.py ]
     3 - ir ao seu repositório local do projeto
     4 - raiz / new / python file / setup
     5 - colar o conteúdo do modelo
     """
 
-# Estrutura do modelo
+# Estrutura do modelo (apenas como backup)
 def esqueleto():
     """
     import codecs
@@ -149,13 +150,12 @@ def esqueleto():
     """
 
 # Configuração do modelo (alteração de dados)
-"OBS"  # Eu não sei ele já tinha esse pacote nas aulas anteriores
-"OBS"  # A impressão que tenho é a de que ele criou esse pacote para essa aula
-"OBS"  # O nome do pacote == nome do projeto (porém, não sei se isso é mandatório/convenção)
-"OBS"  # Na variável [ setup ], será preciso consultar o arquivo [ classificadores.txt ]
+"OBS"  # Nessa aula, há um pacote, e eu não sei ele já o tinha criado nas aulas anteriores, ou nessa
+"OBS"  # O nome do pacote == nome do projeto (não sei se é mandatório/convenção)
+"OBS"  # Na variável [ setup ], será preciso consultar o arquivo [ classificadores.txt ] (ver def parte_2)
 "OBS"  # Ou então, consultar -> https://pypi.org/pypi?%3Aaction=list_classifiers
-"OBS"  # [ setup ] [ par=classifiers ] nessa aula, é baseado na opinião do professor em relação ao projeto dele
-def parte2():
+"OBS"  # [ setup ] [ par=classifiers ] é alterado, baseado na opinião do professor em relação ao projeto dele
+def parte_2():
     """
     PACKAGE = 'nome do pacote do seu projeto'
     NAME = PACKAGE
@@ -172,6 +172,12 @@ def parte2():
         classifiers=[
             'Development Status :: 2 - Pre-Alpha',
             'Environment :: Console',
+            'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
+            'Programming Language :: Python :: 3.9',
+            'Framework :: Django :: 2.2',
+        ],
+        install_requires=[
+            'nomes de dependências sem sua versão' (pelo professor, só foi usado a biblioteca [ requests ])
         ]
     )
     """

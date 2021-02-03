@@ -8,4 +8,6 @@ arquivo_gitignore.py
 pyenv_no_ubuntu.py
 virtualenv.py
 integracao_continua_com_travis_CI.py
-
+arquivo_setup.py
+instalação_local_de_pacote.py
+criacao_de_release.py
